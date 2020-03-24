@@ -8,3 +8,82 @@ h2{
     font-style: normal;
     font-weight: 300;
 }
+
+.primary-heading{
+    font-size:30pt;
+    font-weight:bold;
+}
+.secondary-heading{
+    font-size:24pt;
+    font-weight:bold;
+}
+.section-header{
+    font: size 18pt;
+    font-weight:bold;
+}
+.sub-title{
+    font-size:18pt;
+    font-weight:normal;
+}
+.card-title{
+    font-size:15pt;
+    font-weight:bold;
+}
+.card-copy-small{
+    font-size:15pt;
+    font-weight:lighter;
+}
+.body-copy-small{
+    font-size:14pt;
+    font-weight:lighter;
+}
+.message-time-stamp{
+    font-size:12pt;
+    font-weight:lighter;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#wrapper{
+    max-width:326px;
+    margin:0 auto;
+    overflow: hidden;
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    border-bottom:solid 2px var(--grey-color);
+}
+#input-search{
+    background-color: var(--grey-color);
+    position:relative;
+    width:90%;
+}
+.search-img{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.category{
+    border-top:solid 2px var(--grey-color);
+    border-bottom:solid 2px var(--grey-color);
+    display:flex;
+}
+.circle{
+    background-color:var(--not-background-color);
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    padding:5px;
+}
+#category-arrow{
+    transform: rotate(180deg);
+}
+
+.manage-categories{
+    background-color: var(--background-color);
+}
