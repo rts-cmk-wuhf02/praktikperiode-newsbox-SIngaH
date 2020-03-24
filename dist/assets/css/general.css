@@ -1,13 +1,15 @@
-h1 {
-  font-family: europa, sans-serif;
-  font-style: normal;
-  font-weight: 300; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: europa, sans-serif; }
 
-h2 {
-  font-family: rift-soft, sans-serif;
-  font-style: normal;
-  font-weight: 300; }
+#wrapper {
+  max-width: 326px;
+  margin: 0 auto;
+  overflow: hidden; }
 
+/*fonts*/
 .primary-heading {
   font-size: 30pt;
   font-weight: bold;
@@ -46,16 +48,6 @@ h2 {
 .message-time-stamp {
   font-size: 12pt;
   font-weight: lighter; }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
-
-#wrapper {
-  max-width: 326px;
-  margin: 0 auto;
-  overflow: hidden; }
 
 /*category*/
 .category-top {
