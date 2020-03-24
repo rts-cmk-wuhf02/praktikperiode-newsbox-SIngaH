@@ -1,3 +1,6 @@
+.search-box {
+  border-bottom: solid 2px var(--grey-color); }
+
 .input-search {
   background-color: var(--ice);
   position: relative;
