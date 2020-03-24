@@ -1,0 +1,6 @@
+header {
+  border-bottom: solid 2px var(--grey-color);
+  align-items: center; }
+  header img {
+    height: 20px;
+    width: 20px; }

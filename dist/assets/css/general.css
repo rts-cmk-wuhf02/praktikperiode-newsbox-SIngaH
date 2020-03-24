@@ -10,15 +10,21 @@ h2 {
 
 .primary-heading {
   font-size: 30pt;
-  font-weight: bold; }
+  font-weight: bold;
+  color: var(--sage); }
 
 .secondary-heading {
   font-size: 24pt;
   font-weight: bold; }
 
+.settings-categories {
+  font-size: 20pt;
+  color: #707070; }
+
 .section-header {
   font-size: 18pt;
-  font-weight: bold; }
+  font-weight: bold;
+  color: var(--drab); }
 
 .sub-title {
   font-size: 18pt;
@@ -50,26 +56,6 @@ h2 {
   max-width: 326px;
   margin: 0 auto;
   overflow: hidden; }
-
-header {
-  border-bottom: solid 2px var(--grey-color);
-  align-items: center; }
-  header img {
-    height: 20px;
-    width: 20px; }
-
-/*search*/
-.input-search {
-  background-color: var(--ice);
-  position: relative;
-  width: 90%;
-  border-radius: 4px;
-  color: #707070; }
-
-.search-img {
-  position: absolute;
-  top: 101px;
-  left: 888px; }
 
 /*category*/
 .category-top {
