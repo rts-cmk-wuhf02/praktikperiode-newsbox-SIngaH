@@ -4,8 +4,15 @@
     .category-arrow{
         width: 10px;
         height: 16px;
+        margin-left: 190px;
         transform: rotate(180deg);
     }
+    .arrow-down{
+        transform: rotate(268deg);
+    }
+}
+.hide{
+    display:none;
 }
 .circle{
     background-color:var(--background-color);
