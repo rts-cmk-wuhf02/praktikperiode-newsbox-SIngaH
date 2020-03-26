@@ -74,6 +74,7 @@ input:checked + .slider:before {
   font-size: 14pt;
   font-family: rift-soft, sans-serif; }
   .button button {
+    color: #334856;
     background-color: none;
     border: solid 2px var(--grey-color);
     border-radius: 16px; }

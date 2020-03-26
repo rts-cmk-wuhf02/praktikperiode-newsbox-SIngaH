@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: europa, sans-serif; }
+  font-family: europa, sans-serif;
+  color: var(--text-color); }
 
 #wrapper {
   max-width: 326px;
   margin: 0 auto;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: var(--background-color); }
 
 /*fonts*/
 .primary-heading {
@@ -25,8 +27,7 @@
 
 .section-header {
   font-size: 18pt;
-  font-weight: bold;
-  color: var(--drab); }
+  font-weight: bold; }
 
 .sub-title {
   font-size: 18pt;
