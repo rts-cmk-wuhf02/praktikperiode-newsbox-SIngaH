@@ -1,10 +1,11 @@
+//europe fetch
 fetch("https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml")
   .then(response => response.text())
   .then(data => {
     const parser = new DOMParser();
     const srcDom = parser.parseFromString(data, "application/xml");
     const json = xml2json(srcDom);
-
+    console.log(data)
     json.rss.channel.item.forEach(item => {
       //shorten description
       let description;
@@ -27,7 +28,127 @@ fetch("https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml")
     });
   })
 
-function xml2json(srcDOM) {
+//health fetch
+fetch("https://rss.nytimes.com/services/xml/rss/nyt/Health.xml")
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const srcDom = parser.parseFromString(data, "application/xml");
+    const json = xml2json(srcDom);
+
+    json.rss.channel.item.forEach(item => {
+      //shorten description
+      let description;
+      if(item.description.length > 100){
+        description = item.description.slice(0, 100) + "...";
+      }else{
+        description = item.description;
+      }
+      //display on page
+      document.querySelector(".health .news-hide").innerHTML += `
+        <div class="news grid gap-1 py-4">
+            <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
+            <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
+            <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
+            <div class="archive">
+                <img src="assets/images/inbox-white.svg" alt="put in archive">
+            </div>
+        </div>
+        `
+    });
+  })
+
+//sport fetch
+fetch("https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml")
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const srcDom = parser.parseFromString(data, "application/xml");
+    const json = xml2json(srcDom);
+
+    json.rss.channel.item.forEach(item => {
+      //shorten description
+      let description;
+      if(item.description.length > 100){
+        description = item.description.slice(0, 100) + "...";
+      }else{
+        description = item.description;
+      }
+      //display on page
+      document.querySelector(".sport .news-hide").innerHTML += `
+        <div class="news grid gap-1 py-4">
+            <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
+            <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
+            <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
+            <div class="archive">
+                <img src="assets/images/inbox-white.svg" alt="put in archive">
+            </div>
+        </div>
+        `
+    });
+  })
+
+//business fetch
+fetch("https://rss.nytimes.com/services/xml/rss/nyt/Business.xml")
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const srcDom = parser.parseFromString(data, "application/xml");
+    const json = xml2json(srcDom);
+
+    json.rss.channel.item.forEach(item => {
+      //shorten description
+      let description;
+      if(item.description.length > 100){
+        description = item.description.slice(0, 100) + "...";
+      }else{
+        description = item.description;
+      }
+      //display on page
+      document.querySelector(".business .news-hide").innerHTML += `
+        <div class="news grid gap-1 py-4">
+            <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
+            <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
+            <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
+            <div class="archive">
+                <img src="assets/images/inbox-white.svg" alt="put in archive">
+            </div>
+        </div>
+        `
+    });
+  })
+
+//travel fetch
+fetch("https://rss.nytimes.com/services/xml/rss/nyt/Travel.xml")
+  .then(response => response.text())
+  .then(data => {
+    const parser = new DOMParser();
+    const srcDom = parser.parseFromString(data, "application/xml");
+    const json = xml2json(srcDom);
+
+    json.rss.channel.item.forEach(item => {
+      //shorten description
+      let description;
+      if(item.description.length > 100){
+        description = item.description.slice(0, 100) + "...";
+      }else{
+        description = item.description;
+      }
+      //display on page
+      document.querySelector(".travel .news-hide").innerHTML += `
+        <div class="news grid gap-1 py-4">
+            <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
+            <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
+            <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
+            <div class="archive">
+                <img src="assets/images/inbox-white.svg" alt="put in archive">
+            </div>
+        </div>
+        `
+    });
+  })
+
+  function xml2json(srcDOM) {
     let children = [...srcDOM.children];
   
     // base case for recursion. 

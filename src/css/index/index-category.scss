@@ -1,16 +1,25 @@
 .category-top{
     border-bottom:solid 2px var(--grey-color);
     text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
     .category-arrow{
         width: 10px;
         height: 16px;
-        margin-left: 190px;
+        margin-right: 14px;
         transform: rotate(180deg);
     }
     .arrow-down{
         transform: rotate(268deg);
     }
 }
+.category-img-headline{
+    display:flex;
+    .circle{
+        margin-right:10px;
+    }
+}
+
 .hide{
     display:none;
 }

@@ -1,13 +1,20 @@
 .category-top {
   border-bottom: solid 2px var(--grey-color);
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between; }
   .category-top .category-arrow {
     width: 10px;
     height: 16px;
-    margin-left: 190px;
+    margin-right: 14px;
     transform: rotate(180deg); }
   .category-top .arrow-down {
     transform: rotate(268deg); }
+
+.category-img-headline {
+  display: flex; }
+  .category-img-headline .circle {
+    margin-right: 10px; }
 
 .hide {
   display: none; }
@@ -23,13 +30,13 @@
 .manage-categories {
   background-color: var(--background-color); }
 
-.trash {
-  background-color: var(--danger);
+.archive {
+  background-color: var(--sage);
   height: 100%;
   width: 100%;
   grid-row: 1 /span 2;
   display: grid; }
-  .trash img {
+  .archive img {
     height: 20px;
     width: 20px;
     place-self: center; }
