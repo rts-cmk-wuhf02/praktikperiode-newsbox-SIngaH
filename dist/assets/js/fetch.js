@@ -1,10 +1,23 @@
-fetch("https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml")
+fetch("https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml")
   .then(response => response.text())
   .then(data => {
     const parser = new DOMParser();
     const srcDom = parser.parseFromString(data, "application/xml");
     const json = xml2json(srcDom);
-    console.log(json);
+    console.log(json.rss.channel.item[0].description.length); //shorten and add...
+
+    json.rss.channel.item.forEach(item => {
+      document.querySelector(".news-hide").innerHTML += `
+        <div class="news grid gap-1 py-4">
+            <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
+            <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
+            <p class="body-copy-small"><a href="${item.link}">${item.description}</a></p>
+            <div class="archive">
+                <img src="assets/images/inbox-white.svg" alt="put in archive">
+            </div>
+        </div>
+        `
+    });
   })
 
 function xml2json(srcDOM) {
