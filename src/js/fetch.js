@@ -14,7 +14,7 @@ fetch("https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml")
         description = item.description;
       }
       //display on page
-      document.querySelector(".news-hide").innerHTML += `
+      document.querySelector(".europe .news-hide").innerHTML += `
         <div class="news grid gap-1 py-4">
             <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
             <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
