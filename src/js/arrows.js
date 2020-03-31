@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     let dropDownNews = document.querySelectorAll(".category-top");
     let dropDownArray = Array.from(dropDownNews);
-    // let arrow = document.querySelector(".category-arrow");
     
     for (i = 0; i < dropDownArray.length; i++) {
         dropDownArray[i].addEventListener("click", arrowFunction);   
