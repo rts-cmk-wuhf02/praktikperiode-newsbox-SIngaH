@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
       const srcDom = parser.parseFromString(data, "application/xml");
       const json = xml2json(srcDom);
 
-      json.rss.channel.item.forEach(item => {
+      json.rss.channel.item.forEach((item, index) => {
         //shorten description
         let description;
         if(item.description.length > 100){
@@ -51,11 +51,36 @@ document.addEventListener("DOMContentLoaded", ()=>{
               <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
               <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
               <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
-              <div class="archive">
+              <div class="archive archive-europe" id="${index}">
                   <img src="assets/images/inbox-white.svg" alt="put in archive">
               </div>
           </div>
           `
+          let archive = document.querySelectorAll(".archive-europe");
+          let archiveArray = Array.from(archive);
+          let indexArray = [];
+          for (i = 0; i < archiveArray.length; i++) {
+            archiveArray[i].addEventListener("click", (e) => europeArray(e, indexArray));   
+          }
+          function europeArray(e, indexArray){
+            let index = e.target.id
+            if(index != ""){
+              if(localStorage.getItem("europeChosen") === null){ 
+                if(indexArray.includes(index) === false){
+                  indexArray.push(index)
+                  localStorage.setItem("europeChosen", JSON.stringify(indexArray));
+                }
+              }else if(localStorage.getItem("europeChosen") != null){
+                if(localStorage.getItem("europeChosen").includes(index) === false){
+                  console.log(localStorage.getItem("europeChosen").includes(index))
+                  let prevArray = localStorage.getItem("europeChosen");
+                  indexArray.push(index)
+                  localStorage.setItem("europeChosen", prevArray + JSON.stringify(indexArray));
+                }
+              }
+              console.log("europe" + localStorage.getItem("europeChosen"))
+            }
+          }
       });
     })
 
@@ -67,7 +92,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
       const srcDom = parser.parseFromString(data, "application/xml");
       const json = xml2json(srcDom);
 
-      json.rss.channel.item.forEach(item => {
+      json.rss.channel.item.forEach((item, index) => {
         //shorten description
         let description;
         if(item.description.length > 100){
@@ -81,11 +106,36 @@ document.addEventListener("DOMContentLoaded", ()=>{
               <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
               <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
               <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
-              <div class="archive">
+              <div class="archive archive-health" id="${index}">
                   <img src="assets/images/inbox-white.svg" alt="put in archive">
               </div>
           </div>
           `
+          let archive = document.querySelectorAll(".archive-health");
+          let archiveArray = Array.from(archive);
+          let indexArray = [];
+          for (i = 0; i < archiveArray.length; i++) {
+            archiveArray[i].addEventListener("click", (e) => healthArray(e, indexArray));   
+          }
+          function healthArray(e, indexArray){
+            let index = e.target.id
+            if(index != ""){
+              if(localStorage.getItem("healthChosen") === null){ 
+                if(indexArray.includes(index) === false){
+                  indexArray.push(index)
+                  localStorage.setItem("healthChosen", JSON.stringify(indexArray));
+                }
+              }else if(localStorage.getItem("healthChosen") != null){
+                if(localStorage.getItem("healthChosen").includes(index) === false){
+                  console.log(localStorage.getItem("healthChosen").includes(index))
+                  let prevArray = localStorage.getItem("healthChosen");
+                  indexArray.push(index)
+                  localStorage.setItem("healthChosen", prevArray + JSON.stringify(indexArray));
+                }
+              }
+              console.log("health: " + localStorage.getItem("healthChosen"))
+            }
+          }
       });
     })
 
@@ -97,7 +147,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
       const srcDom = parser.parseFromString(data, "application/xml");
       const json = xml2json(srcDom);
 
-      json.rss.channel.item.forEach(item => {
+      json.rss.channel.item.forEach((item, index) => {
         //shorten description
         let description;
         if(item.description.length > 100){
@@ -111,11 +161,36 @@ document.addEventListener("DOMContentLoaded", ()=>{
               <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
               <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
               <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
-              <div class="archive">
+              <div class="archive archive-sport" id="${index}">
                   <img src="assets/images/inbox-white.svg" alt="put in archive">
               </div>
           </div>
           `
+          let archive = document.querySelectorAll(".archive-sport");
+          let archiveArray = Array.from(archive);
+          let indexArray = [];
+          for (i = 0; i < archiveArray.length; i++) {
+            archiveArray[i].addEventListener("click", (e) => sportArray(e, indexArray));   
+          }
+          function sportArray(e, indexArray){
+            let index = e.target.id
+            if(index != ""){
+              if(localStorage.getItem("sportChosen") === null){ 
+                if(indexArray.includes(index) === false){
+                  indexArray.push(index)
+                  localStorage.setItem("sportChosen", JSON.stringify(indexArray));
+                }
+              }else if(localStorage.getItem("sportChosen") != null){
+                if(localStorage.getItem("sportChosen").includes(index) === false){
+                  console.log(localStorage.getItem("sportChosen").includes(index))
+                  let prevArray = localStorage.getItem("sportChosen");
+                  indexArray.push(index)
+                  localStorage.setItem("sportChosen", prevArray + JSON.stringify(indexArray));
+                }
+              }
+              console.log("sport: " + localStorage.getItem("sportChosen"))
+            }
+          }
       });
     })
 
@@ -127,7 +202,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
       const srcDom = parser.parseFromString(data, "application/xml");
       const json = xml2json(srcDom);
 
-      json.rss.channel.item.forEach(item => {
+      json.rss.channel.item.forEach((item, index) => {
         //shorten description
         let description;
         if(item.description.length > 100){
@@ -141,11 +216,36 @@ document.addEventListener("DOMContentLoaded", ()=>{
               <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
               <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
               <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
-              <div class="archive">
+              <div class="archive archive-business" id="${index}">
                   <img src="assets/images/inbox-white.svg" alt="put in archive">
               </div>
           </div>
           `
+          let archive = document.querySelectorAll(".archive-business");
+          let archiveArray = Array.from(archive);
+          let indexArray = [];
+          for (i = 0; i < archiveArray.length; i++) {
+            archiveArray[i].addEventListener("click", (e) => businessArray(e, indexArray));   
+          }
+          function businessArray(e, indexArray){
+            let index = e.target.id
+            if(index != ""){
+              if(localStorage.getItem("businessChosen") === null){ 
+                if(indexArray.includes(index) === false){
+                  indexArray.push(index)
+                  localStorage.setItem("businessChosen", JSON.stringify(indexArray));
+                }
+              }else if(localStorage.getItem("businessChosen") != null){
+                if(localStorage.getItem("businessChosen").includes(index) === false){
+                  console.log(localStorage.getItem("businessChosen").includes(index))
+                  let prevArray = localStorage.getItem("businessChosen");
+                  indexArray.push(index)
+                  localStorage.setItem("businessChosen", prevArray + JSON.stringify(indexArray));
+                }
+              }
+              console.log("business: " + localStorage.getItem("businessChosen"))
+            }
+          }
       });
     })
 
@@ -157,7 +257,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
       const srcDom = parser.parseFromString(data, "application/xml");
       const json = xml2json(srcDom);
 
-      json.rss.channel.item.forEach(item => {
+      json.rss.channel.item.forEach((item, index) => {
         //shorten description
         let description;
         if(item.description.length > 100){
@@ -171,14 +271,39 @@ document.addEventListener("DOMContentLoaded", ()=>{
               <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
               <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
               <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
-              <div class="archive">
+              <div class="archive archive-travel" id="${index}">
                   <img src="assets/images/inbox-white.svg" alt="put in archive">
               </div>
           </div>
           `
+          let archive = document.querySelectorAll(".archive-travel");
+          let archiveArray = Array.from(archive);
+          let indexArray = [];
+          for (i = 0; i < archiveArray.length; i++) {
+            archiveArray[i].addEventListener("click", (e) => travelArray(e, indexArray));   
+          }
+          function travelArray(e, indexArray){
+            let index = e.target.id
+            if(index != ""){
+              if(localStorage.getItem("travelChosen") === null){ 
+                if(indexArray.includes(index) === false){
+                  indexArray.push(index)
+                  localStorage.setItem("travelChosen", JSON.stringify(indexArray));
+                }
+              }else if(localStorage.getItem("travelChosen") != null){
+                if(localStorage.getItem("travelChosen").includes(index) === false){
+                  console.log(localStorage.getItem("travelChosen").includes(index))
+                  let prevArray = localStorage.getItem("travelChosen");
+                  indexArray.push(index)
+                  localStorage.setItem("travelChosen", prevArray + JSON.stringify(indexArray));
+                }
+              }
+              console.log("travel: " + localStorage.getItem("travelChosen"))
+            }
+          }
       });
     })
-
+    
     function xml2json(srcDOM) {
       let children = [...srcDOM.children];
     
