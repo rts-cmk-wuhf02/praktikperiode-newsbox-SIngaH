@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
           description = item.description;
         }
         
-        if(europeChosen.includes(index)){
+        if(europeChosen.includes("," + index) || europeChosen.includes(index + ",")){
         //display on page
           document.querySelector(".europe .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -78,11 +78,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
             function europeArray(e){
               let index = e.target.id
               console.log(index)
-              // europeChosen.slice(index)
-              // console.log(europeChosen)
-              let array = europeChosen
-              array.slice(index)
-              console.log("array" + array)
             }
         }
       });
@@ -104,7 +99,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
-        if(healthChosen.includes(index)){
+
+        if(healthChosen.includes("," + index) || healthChosen.includes(index + ",")){
         //display on page
           document.querySelector(".health .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -136,7 +132,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
-        if(sportChosen.includes(index)){
+
+        if(sportChosen.includes("," + index) || sportChosen.includes(index + ",")){  
         //display on page
           document.querySelector(".sport .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -168,7 +165,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
-        if(businessChosen.includes(index)){
+
+        if(businessChosen.includes("," + index) || businessChosen.includes(index + ",")){
         //display on page
           document.querySelector(".business .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -200,7 +198,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
-        if(travelChosen.includes(index)){
+
+        if(travelChosen.includes("," + index) || travelChosen.includes(index + ",")){
         //display on page
           document.querySelector(".travel .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
