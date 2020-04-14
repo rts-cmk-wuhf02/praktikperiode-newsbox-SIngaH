@@ -24,19 +24,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
   console.log("business: " + businessChosen)
   console.log("travel: " + travelChosen)
   
-  if(Echeck === "false" || europeChosen === ""){
+  if(Echeck === "false" || europeChosen === null){
     europe.style.display="none"
   }
-  if(Hcheck === "false" || healthChosen === ""){
+  if(Hcheck === "false" || healthChosen === null){
     health.style.display="none"
   }
-  if(Scheck === "false" || sportChosen === ""){
+  if(Scheck === "false" || sportChosen === null){
     sport.style.display="none"
   }
-  if(Bcheck === "false" || businessChosen === ""){
+  if(Bcheck === "false" || businessChosen === null){
     business.style.display="none"
   }
-  if(Tcheck === "false" || travelChosen === ""){
+  if(Tcheck === "false" || travelChosen === null){
     travel.style.display="none"
   }
     
@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
+        
         if(europeChosen.includes(index)){
         //display on page
           document.querySelector(".europe .news-hide").innerHTML += `
@@ -69,6 +70,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
+            let trash = document.querySelectorAll(".trash");
+            let trashArray = Array.from(trash);
+            for(i = 0; i < trashArray.length; i++){
+              trashArray[i].addEventListener("click", (e) => europeArray(e));
+            }
+            function europeArray(e){
+              let index = e.target.id
+              console.log(index)
+            }
         }
       });
     })  
