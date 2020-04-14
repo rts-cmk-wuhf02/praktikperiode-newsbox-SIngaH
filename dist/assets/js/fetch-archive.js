@@ -78,6 +78,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             function europeArray(e){
               let index = e.target.id
               console.log(index)
+              europeChosen.slice(index)
+              console.log(europeChosen)
             }
         }
       });
