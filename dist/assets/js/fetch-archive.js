@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         
         if(europeChosen.includes("," + index) || europeChosen.includes(index + ",")){
+
         //display on page
           document.querySelector(".europe .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -76,13 +77,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
               trashArray[i].addEventListener("click", (e) => europeArray(e));
             }
             function europeArray(e){
+              let array = europeChosen.split(",")
+              console.log(array)
               let index = e.target.id
-              console.log(index)
+              const theIndex = array.indexOf(index)
+              if(theIndex > -1){
+                array.splice(theIndex, 1)
+              }
+              console.log(array)
+              let europeString = array.join(",")
+              localStorage.setItem("europeChosen", europeString)
+              console.log(europeChosen)
             }
-        }
+        } 
       });
     })  
-
+  
   //health fetch
   fetch("https://rss.nytimes.com/services/xml/rss/nyt/Health.xml")
     .then(response => response.text())
