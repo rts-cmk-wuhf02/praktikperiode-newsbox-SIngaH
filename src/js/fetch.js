@@ -58,26 +58,32 @@ document.addEventListener("DOMContentLoaded", ()=>{
           `
           let archive = document.querySelectorAll(".archive-europe");
           let archiveArray = Array.from(archive);
-          let indexArray = [];
+          // let indexArray = [];
+          let prevString = localStorage.getItem("europeChosen");
+          let prevArray = prevString.split(",");
+          // let string = prevString.join(",")
+
           for (i = 0; i < archiveArray.length; i++) {
-            archiveArray[i].addEventListener("click", (e) => europeArray(e, indexArray));   
+            archiveArray[i].addEventListener("click", (e) => europeArray(e, prevString, prevArray));   
           }
-          function europeArray(e, indexArray){
+          function europeArray(e, prevString, prevArray){
             let index = e.target.id
             if(index != ""){
               if(localStorage.getItem("europeChosen") === null){ 
-                if(indexArray.includes(index) === false){
-                  indexArray.push(index)
-                  let string = indexArray.join(",")
+                if(localStorage.getItem("europeChosen").includes(index) === false){
+                  prevArray.push(index)
+                  let string = prevString.join(",")
                   localStorage.setItem("europeChosen", string);
+                  console.log(localStorage.getItem("europeChosen").includes(index))
                 }
               }else if(localStorage.getItem("europeChosen") != null){
                 if(localStorage.getItem("europeChosen").includes(index) === false){
-                  console.log(localStorage.getItem("europeChosen").includes(index))
-                  let prevString = localStorage.getItem("europeChosen");
-                  let prevArray = prevString.split(",");
+                  // console.log(localStorage.getItem("europeChosen").includes(index))
+                  // let prevString = localStorage.getItem("europeChosen");
+                  // let prevArray = prevString.split(",");
                   prevArray.push(index)
-                  localStorage.setItem("europeChosen", prevArray);
+                  let string = prevString.join(",")
+                  localStorage.setItem("europeChosen", string);
                 }
               }
               console.log("europe " + localStorage.getItem("europeChosen"))
