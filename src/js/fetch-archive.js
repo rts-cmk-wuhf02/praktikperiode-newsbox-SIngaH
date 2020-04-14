@@ -78,16 +78,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }
             function europeArray(e){
               let array = europeChosen.split(",")
-              console.log(array)
               let index = e.target.id
               const theIndex = array.indexOf(index)
               if(theIndex > -1){
                 array.splice(theIndex, 1)
               }
-              console.log(array)
-              let europeString = array.join(",")
-              localStorage.setItem("europeChosen", europeString)
-              console.log(europeChosen)
+              let aString = array.join(",")
+              localStorage.setItem("europeChosen", aString)
             }
         } 
       });
@@ -122,7 +119,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
-        }
+            let trash = document.querySelectorAll(".trash");
+            let trashArray = Array.from(trash);
+            for(i = 0; i < trashArray.length; i++){
+              trashArray[i].addEventListener("click", (e) => healthArray(e));
+            }
+            function healthArray(e){
+              let array = healthChosen.split(",")
+              let index = e.target.id
+              const theIndex = array.indexOf(index)
+              if(theIndex > -1){
+                array.splice(theIndex, 1)
+              }
+              let aString = array.join(",")
+              localStorage.setItem("healthChosen", aString)
+            }
+        } 
       });
     })  
 
@@ -155,6 +167,21 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
+            let trash = document.querySelectorAll(".trash");
+            let trashArray = Array.from(trash);
+            for(i = 0; i < trashArray.length; i++){
+              trashArray[i].addEventListener("click", (e) => sportArray(e));
+            }
+            function sportArray(e){
+              let array = sportChosen.split(",")
+              let index = e.target.id
+              const theIndex = array.indexOf(index)
+              if(theIndex > -1){
+                array.splice(theIndex, 1)
+              }
+              let aString = array.join(",")
+              localStorage.setItem("sportChosen", aString)
+            }
         }
       });
     })  
@@ -188,7 +215,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
-        }
+            let trash = document.querySelectorAll(".trash");
+            let trashArray = Array.from(trash);
+            for(i = 0; i < trashArray.length; i++){
+              trashArray[i].addEventListener("click", (e) => businessArray(e));
+            }
+            function businessArray(e){
+              let array = businessChosen.split(",")
+              let index = e.target.id
+              const theIndex = array.indexOf(index)
+              if(theIndex > -1){
+                array.splice(theIndex, 1)
+              }
+              let aString = array.join(",")
+              localStorage.setItem("businessChosen", aString)
+            }
+        } 
       });
     })  
 
@@ -221,7 +263,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
-        }
+            let trash = document.querySelectorAll(".trash");
+            let trashArray = Array.from(trash);
+            for(i = 0; i < trashArray.length; i++){
+              trashArray[i].addEventListener("click", (e) => travelArray(e));
+            }
+            function travelArray(e){
+              let array = travelChosen.split(",")
+              let index = e.target.id
+              const theIndex = array.indexOf(index)
+              if(theIndex > -1){
+                array.splice(theIndex, 1)
+              }
+              let aString = array.join(",")
+              localStorage.setItem("travelChosen", aString)
+            }
+        } 
       });
     }) 
 
