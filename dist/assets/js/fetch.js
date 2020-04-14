@@ -68,17 +68,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
               if(localStorage.getItem("europeChosen") === null){ 
                 if(indexArray.includes(index) === false){
                   indexArray.push(index)
-                  localStorage.setItem("europeChosen", JSON.stringify(indexArray));
+                  let string = indexArray.join(",")
+                  localStorage.setItem("europeChosen", string);
                 }
               }else if(localStorage.getItem("europeChosen") != null){
                 if(localStorage.getItem("europeChosen").includes(index) === false){
                   console.log(localStorage.getItem("europeChosen").includes(index))
-                  let prevArray = localStorage.getItem("europeChosen");
-                  indexArray.push(index)
-                  localStorage.setItem("europeChosen", prevArray + JSON.stringify(indexArray));
+                  let prevString = localStorage.getItem("europeChosen");
+                  let prevArray = prevString.split(",");
+                  prevArray.push(index)
+                  localStorage.setItem("europeChosen", prevArray);
                 }
               }
-              console.log("europe" + localStorage.getItem("europeChosen"))
+              console.log("europe " + localStorage.getItem("europeChosen"))
             }
           }
       });
@@ -123,17 +125,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
               if(localStorage.getItem("healthChosen") === null){ 
                 if(indexArray.includes(index) === false){
                   indexArray.push(index)
-                  localStorage.setItem("healthChosen", JSON.stringify(indexArray));
+                  let string = indexArray.join(",")
+                  localStorage.setItem("healthChosen", string);
                 }
               }else if(localStorage.getItem("healthChosen") != null){
                 if(localStorage.getItem("healthChosen").includes(index) === false){
                   console.log(localStorage.getItem("healthChosen").includes(index))
-                  let prevArray = localStorage.getItem("healthChosen");
-                  indexArray.push(index)
-                  localStorage.setItem("healthChosen", prevArray + JSON.stringify(indexArray));
+                  let prevString = localStorage.getItem("healthChosen");
+                  let prevArray = prevString.split(",");
+                  prevArray.push(index)
+                  localStorage.setItem("healthChosen", prevArray);
                 }
               }
-              console.log("health: " + localStorage.getItem("healthChosen"))
+              console.log("health " + localStorage.getItem("healthChosen"))
             }
           }
       });
@@ -178,17 +182,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
               if(localStorage.getItem("sportChosen") === null){ 
                 if(indexArray.includes(index) === false){
                   indexArray.push(index)
-                  localStorage.setItem("sportChosen", JSON.stringify(indexArray));
+                  let string = indexArray.join(",")
+                  localStorage.setItem("sportChosen", string);
                 }
               }else if(localStorage.getItem("sportChosen") != null){
                 if(localStorage.getItem("sportChosen").includes(index) === false){
                   console.log(localStorage.getItem("sportChosen").includes(index))
-                  let prevArray = localStorage.getItem("sportChosen");
-                  indexArray.push(index)
-                  localStorage.setItem("sportChosen", prevArray + JSON.stringify(indexArray));
+                  let prevString = localStorage.getItem("sportChosen");
+                  let prevArray = prevString.split(",");
+                  prevArray.push(index)
+                  localStorage.setItem("sportChosen", prevArray);
                 }
               }
-              console.log("sport: " + localStorage.getItem("sportChosen"))
+              console.log("sport " + localStorage.getItem("sportChosen"))
             }
           }
       });
@@ -233,17 +239,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
               if(localStorage.getItem("businessChosen") === null){ 
                 if(indexArray.includes(index) === false){
                   indexArray.push(index)
-                  localStorage.setItem("businessChosen", JSON.stringify(indexArray));
+                  let string = indexArray.join(",")
+                  localStorage.setItem("businessChosen", string);
                 }
               }else if(localStorage.getItem("businessChosen") != null){
                 if(localStorage.getItem("businessChosen").includes(index) === false){
                   console.log(localStorage.getItem("businessChosen").includes(index))
-                  let prevArray = localStorage.getItem("businessChosen");
-                  indexArray.push(index)
-                  localStorage.setItem("businessChosen", prevArray + JSON.stringify(indexArray));
+                  let prevString = localStorage.getItem("businessChosen");
+                  let prevArray = prevString.split(",");
+                  prevArray.push(index)
+                  localStorage.setItem("businessChosen", prevArray);
                 }
               }
-              console.log("business: " + localStorage.getItem("businessChosen"))
+              console.log("business " + localStorage.getItem("businessChosen"))
             }
           }
       });
@@ -288,17 +296,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
               if(localStorage.getItem("travelChosen") === null){ 
                 if(indexArray.includes(index) === false){
                   indexArray.push(index)
-                  localStorage.setItem("travelChosen", JSON.stringify(indexArray));
+                  let string = indexArray.join(",")
+                  localStorage.setItem("travelChosen", string);
                 }
               }else if(localStorage.getItem("travelChosen") != null){
                 if(localStorage.getItem("travelChosen").includes(index) === false){
                   console.log(localStorage.getItem("travelChosen").includes(index))
-                  let prevArray = localStorage.getItem("travelChosen");
-                  indexArray.push(index)
-                  localStorage.setItem("travelChosen", prevArray + JSON.stringify(indexArray));
+                  let prevString = localStorage.getItem("travelChosen");
+                  let prevArray = prevString.split(",");
+                  prevArray.push(index)
+                  localStorage.setItem("travelChosen", prevArray);
                 }
               }
-              console.log("travel: " + localStorage.getItem("travelChosen"))
+              console.log("travel " + localStorage.getItem("travelChosen"))
             }
           }
       });
