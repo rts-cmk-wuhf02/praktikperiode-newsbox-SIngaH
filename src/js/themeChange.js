@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     let btn = document.querySelector("button");
-    let check = localStorage.getItem('theme');
 
     if(btn === null){
         lightDark();
@@ -8,6 +7,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         lightDark();
         btn.addEventListener("click", ()=>{
             lightDark();
+            let check = localStorage.getItem('theme');
             if(check === "light"){
                 localStorage.setItem("theme", "dark");
             }else if(check === "dark"){
