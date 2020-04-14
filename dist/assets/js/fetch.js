@@ -58,10 +58,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
           `
           let archive = document.querySelectorAll(".archive-europe");
           let archiveArray = Array.from(archive);
-          // let indexArray = [];
           let prevString = localStorage.getItem("europeChosen");
-          let prevArray = prevString.split(",");
-          // let string = prevString.join(",")
+          let prevArray = prevString ? prevString.split(",") : [];
 
           for (i = 0; i < archiveArray.length; i++) {
             archiveArray[i].addEventListener("click", (e) => europeArray(e, prevString, prevArray));   
@@ -69,23 +67,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
           function europeArray(e, prevString, prevArray){
             let index = e.target.id
             if(index != ""){
-              if(localStorage.getItem("europeChosen") === null){ 
-                if(localStorage.getItem("europeChosen").includes(index) === false){
-                  prevArray.push(index)
-                  let string = prevString.join(",")
-                  localStorage.setItem("europeChosen", string);
-                  console.log(localStorage.getItem("europeChosen").includes(index))
-                }
-              }else if(localStorage.getItem("europeChosen") != null){
-                if(localStorage.getItem("europeChosen").includes(index) === false){
-                  // console.log(localStorage.getItem("europeChosen").includes(index))
-                  // let prevString = localStorage.getItem("europeChosen");
-                  // let prevArray = prevString.split(",");
-                  prevArray.push(index)
-                  let string = prevString.join(",")
-                  localStorage.setItem("europeChosen", string);
-                }
+              if (!localStorage.getItem("europeChosen") || !prevArray.includes(index)) {
+                prevArray.push(index);
               }
+              prevString = prevArray.join(",");
+              localStorage.setItem("europeChosen", prevString);
               console.log("europe " + localStorage.getItem("europeChosen"))
             }
           }
@@ -121,28 +107,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
           `
           let archive = document.querySelectorAll(".archive-health");
           let archiveArray = Array.from(archive);
-          let indexArray = [];
+          let prevString = localStorage.getItem("healthChosen");
+          let prevArray = prevString ? prevString.split(",") : [];
+
           for (i = 0; i < archiveArray.length; i++) {
-            archiveArray[i].addEventListener("click", (e) => healthArray(e, indexArray));   
+            archiveArray[i].addEventListener("click", (e) => healthArray(e, prevString, prevArray));   
           }
-          function healthArray(e, indexArray){
+          function healthArray(e, prevString, prevArray){
             let index = e.target.id
             if(index != ""){
-              if(localStorage.getItem("healthChosen") === null){ 
-                if(indexArray.includes(index) === false){
-                  indexArray.push(index)
-                  let string = indexArray.join(",")
-                  localStorage.setItem("healthChosen", string);
-                }
-              }else if(localStorage.getItem("healthChosen") != null){
-                if(localStorage.getItem("healthChosen").includes(index) === false){
-                  console.log(localStorage.getItem("healthChosen").includes(index))
-                  let prevString = localStorage.getItem("healthChosen");
-                  let prevArray = prevString.split(",");
-                  prevArray.push(index)
-                  localStorage.setItem("healthChosen", prevArray);
-                }
+              if (!localStorage.getItem("healthChosen") || !prevArray.includes(index)) {
+                prevArray.push(index);
               }
+              prevString = prevArray.join(",");
+              localStorage.setItem("healthChosen", prevString);
               console.log("health " + localStorage.getItem("healthChosen"))
             }
           }
@@ -176,30 +154,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
+
           let archive = document.querySelectorAll(".archive-sport");
           let archiveArray = Array.from(archive);
-          let indexArray = [];
+          let prevString = localStorage.getItem("sportChosen");
+          let prevArray = prevString ? prevString.split(",") : [];
+
           for (i = 0; i < archiveArray.length; i++) {
-            archiveArray[i].addEventListener("click", (e) => sportArray(e, indexArray));   
+            archiveArray[i].addEventListener("click", (e) => sportArray(e, prevString, prevArray));   
           }
-          function sportArray(e, indexArray){
+          function sportArray(e, prevString, prevArray){
             let index = e.target.id
             if(index != ""){
-              if(localStorage.getItem("sportChosen") === null){ 
-                if(indexArray.includes(index) === false){
-                  indexArray.push(index)
-                  let string = indexArray.join(",")
-                  localStorage.setItem("sportChosen", string);
-                }
-              }else if(localStorage.getItem("sportChosen") != null){
-                if(localStorage.getItem("sportChosen").includes(index) === false){
-                  console.log(localStorage.getItem("sportChosen").includes(index))
-                  let prevString = localStorage.getItem("sportChosen");
-                  let prevArray = prevString.split(",");
-                  prevArray.push(index)
-                  localStorage.setItem("sportChosen", prevArray);
-                }
+              if (!localStorage.getItem("sportChosen") || !prevArray.includes(index)) {
+                prevArray.push(index);
               }
+              prevString = prevArray.join(",");
+              localStorage.setItem("sportChosen", prevString);
               console.log("sport " + localStorage.getItem("sportChosen"))
             }
           }
@@ -233,30 +204,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
+
           let archive = document.querySelectorAll(".archive-business");
           let archiveArray = Array.from(archive);
-          let indexArray = [];
+          let prevString = localStorage.getItem("businessChosen");
+          let prevArray = prevString ? prevString.split(",") : [];
+
           for (i = 0; i < archiveArray.length; i++) {
-            archiveArray[i].addEventListener("click", (e) => businessArray(e, indexArray));   
+            archiveArray[i].addEventListener("click", (e) => businessArray(e, prevString, prevArray));   
           }
-          function businessArray(e, indexArray){
+          function businessArray(e, prevString, prevArray){
             let index = e.target.id
             if(index != ""){
-              if(localStorage.getItem("businessChosen") === null){ 
-                if(indexArray.includes(index) === false){
-                  indexArray.push(index)
-                  let string = indexArray.join(",")
-                  localStorage.setItem("businessChosen", string);
-                }
-              }else if(localStorage.getItem("businessChosen") != null){
-                if(localStorage.getItem("businessChosen").includes(index) === false){
-                  console.log(localStorage.getItem("businessChosen").includes(index))
-                  let prevString = localStorage.getItem("businessChosen");
-                  let prevArray = prevString.split(",");
-                  prevArray.push(index)
-                  localStorage.setItem("businessChosen", prevArray);
-                }
+              if (!localStorage.getItem("businessChosen") || !prevArray.includes(index)) {
+                prevArray.push(index);
               }
+              prevString = prevArray.join(",");
+              localStorage.setItem("businessChosen", prevString);
               console.log("business " + localStorage.getItem("businessChosen"))
             }
           }
@@ -290,30 +254,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
+
           let archive = document.querySelectorAll(".archive-travel");
           let archiveArray = Array.from(archive);
-          let indexArray = [];
+          let prevString = localStorage.getItem("travelChosen");
+          let prevArray = prevString ? prevString.split(",") : [];
+
           for (i = 0; i < archiveArray.length; i++) {
-            archiveArray[i].addEventListener("click", (e) => travelArray(e, indexArray));   
+            archiveArray[i].addEventListener("click", (e) => travelArray(e, prevString, prevArray));   
           }
-          function travelArray(e, indexArray){
+          function travelArray(e, prevString, prevArray){
             let index = e.target.id
             if(index != ""){
-              if(localStorage.getItem("travelChosen") === null){ 
-                if(indexArray.includes(index) === false){
-                  indexArray.push(index)
-                  let string = indexArray.join(",")
-                  localStorage.setItem("travelChosen", string);
-                }
-              }else if(localStorage.getItem("travelChosen") != null){
-                if(localStorage.getItem("travelChosen").includes(index) === false){
-                  console.log(localStorage.getItem("travelChosen").includes(index))
-                  let prevString = localStorage.getItem("travelChosen");
-                  let prevArray = prevString.split(",");
-                  prevArray.push(index)
-                  localStorage.setItem("travelChosen", prevArray);
-                }
+              if (!localStorage.getItem("travelChosen") || !prevArray.includes(index)) {
+                prevArray.push(index);
               }
+              prevString = prevArray.join(",");
+              localStorage.setItem("travelChosen", prevString);
               console.log("travel " + localStorage.getItem("travelChosen"))
             }
           }
