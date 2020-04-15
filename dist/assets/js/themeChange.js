@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     let btn = document.querySelector("button");
-
+    
     if(btn === null){
         lightDark();
     }else{
         lightDark();
         btn.addEventListener("click", ()=>{
-            lightDark();
             let check = localStorage.getItem('theme');
             if(check === "light"){
                 localStorage.setItem("theme", "dark");
@@ -15,6 +14,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }else{
                 localStorage.setItem("theme", "dark");
             }
+            lightDark();
         });
     }
     function lightDark(){
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let arrow = document.querySelectorAll(".arrow");
         let inbox = document.querySelector(".inbox");
         let settings = document.querySelector(".settings");
-        if(check === "light"){
+        if(check === "dark"){
             document.documentElement.style.setProperty('--background-color', '#1B1C20');
             document.documentElement.style.setProperty('--text-color', '#fff');
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             }else if(settings !== null){
                 settings.src="assets/images/Settings-white.svg";
             }
-        }else if(check === "dark"){
+        }else{
             document.documentElement.style.setProperty('--background-color', '#fff');
             document.documentElement.style.setProperty('--text-color', '#1B1C20');
 
@@ -49,20 +49,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 settings.src="assets/images/Settings-black.svg";
             }else if(settings !== null){
                 settings.src="assets/images/Settings-black.svg";
-            }
-        }else{
-            document.documentElement.style.setProperty('--background-color', '#1B1C20');
-            document.documentElement.style.setProperty('--text-color', '#fff');
-
-            for (i = 0; i < arrow.length; i++) {
-                arrow[i].src = "assets/images/arrow-white.svg";
-            }
-
-            if(inbox !== null){
-                inbox.src="assets/images/inbox-white.svg";
-                settings.src="assets/images/Settings-white.svg";
-            }else if(settings !== null){
-                settings.src="assets/images/Settings-white.svg";
             }
         }
     }
