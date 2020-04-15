@@ -24,22 +24,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
   console.log("business: " + businessChosen)
   console.log("travel: " + travelChosen)
   
-  if(Echeck === "false" || europeChosen === null){
+  if(Echeck === "false" || europeChosen === ""){
     europe.style.display="none"
   }
-  if(Hcheck === "false" || healthChosen === null){
+  if(Hcheck === "false" || healthChosen === ""){
     health.style.display="none"
   }
-  if(Scheck === "false" || sportChosen === null){
+  if(Scheck === "false" || sportChosen === ""){
     sport.style.display="none"
   }
-  if(Bcheck === "false" || businessChosen === null){
+  if(Bcheck === "false" || businessChosen === ""){
     business.style.display="none"
   }
-  if(Tcheck === "false" || travelChosen === null){
+  if(Tcheck === "false" || travelChosen === ""){
     travel.style.display="none"
   }
-    
+  
 //fetches
   //europe fetch
   fetch("https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml")
