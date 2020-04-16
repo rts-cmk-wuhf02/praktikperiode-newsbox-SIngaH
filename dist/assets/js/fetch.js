@@ -57,73 +57,40 @@ document.addEventListener("DOMContentLoaded", ()=>{
           </div>
           `
           //swipe
+          const news = document.querySelectorAll('.news');
+          const newsArray = Array.from(news);
+          newsArray.forEach(_C =>{
+            N = _C.children.length;
 
-          const C = document.querySelectorAll('.news');
-          const _C = Array.from(C);
-          let x0 = null;
-          
-          for(x = 0; x < _C.length; x++){
-            N = _C[x].children.length;
-            _C[x].style.setProperty('--n', N)
-            _C[x].addEventListener('mousedown', lock, false);
-            _C[x].addEventListener('touchstart', lock, false);
+            _C.style.setProperty('--n', N)
+            
+            let x0 = null;
 
-            _C[x].addEventListener('mouseup', move(x), false);
-            _C[x].addEventListener('touchend', move(x), false);
-            _C[x].addEventListener('touchmove', e => {e.preventDefault()}, false)
-          }
+            _C.addEventListener('mousedown', lock, false);
+            _C.addEventListener('touchstart', lock, false);
 
-           
-          function lock(e) { x0 = unify(e).clientX };
-          
-          let i = 0;
+            _C.addEventListener('mouseup', move, false);
+            _C.addEventListener('touchend', move, false);
 
-          function move(e, x) {
-            if(x0 || x0 === 0) {
-              let dx = unify(e).clientX - x0, s = Math.sign(dx);
-              
-              if((i > 0 || s < 0) && (i < N - 1 || s > 0))
-              _C[x].style.setProperty('--i', i -= s);
-              
-              x0 = null
-            }
-          };
+            function lock(e) { x0 = unify(e).clientX };
+            
+            let i = 0;
 
-          function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
-      
-                    //swipe that works on the first news article
-                    /*
-                    const _C = document.querySelector('.news');
-                    N = _C.children.length;
-          
-                    _C.style.setProperty('--n', N)
-                    
-                    let x0 = null;
-          
-                    _C.addEventListener('mousedown', lock, false);
-                    _C.addEventListener('touchstart', lock, false);
-          
-                    _C.addEventListener('mouseup', move, false);
-                    _C.addEventListener('touchend', move, false);
-          
-                    function lock(e) { x0 = unify(e).clientX };
-                    
-                    let i = 0;
-          
-                    function move(e) {
-                      if(x0 || x0 === 0) {
-                        let dx = unify(e).clientX - x0, s = Math.sign(dx);
-                        
-                        if((i > 0 || s < 0) && (i < N - 1 || s > 0))
-                        _C.style.setProperty('--i', i -= s);
-                        
-                        x0 = null
-                      }
-                    };
-                    _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
-          
-                    function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };*/
+            function move(e) {
+              if(x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0, s = Math.sign(dx);
 
+                if((i > 0 || s < 0) && (i < N - 1 || s > 0))
+                _C.style.setProperty('--i', i -= s);
+
+                x0 = null
+              }
+            };
+            _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
+
+            function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
+          });
+                  
           //add to archives
           let archive = document.querySelectorAll(".archive-europe");
           let archiveArray = Array.from(archive);
@@ -174,6 +141,42 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
+          //swipe
+          const news = document.querySelectorAll('.news');
+          const newsArray = Array.from(news);
+          newsArray.forEach(_C =>{
+            N = _C.children.length;
+
+            _C.style.setProperty('--n', N)
+            
+            let x0 = null;
+
+            _C.addEventListener('mousedown', lock, false);
+            _C.addEventListener('touchstart', lock, false);
+
+            _C.addEventListener('mouseup', move, false);
+            _C.addEventListener('touchend', move, false);
+
+            function lock(e) { x0 = unify(e).clientX };
+            
+            let i = 0;
+
+            function move(e) {
+              if(x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0, s = Math.sign(dx);
+
+                if((i > 0 || s < 0) && (i < N - 1 || s > 0))
+                _C.style.setProperty('--i', i -= s);
+
+                x0 = null
+              }
+            };
+            _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
+
+            function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
+          });
+                  
+          //add to archives
           let archive = document.querySelectorAll(".archive-health");
           let archiveArray = Array.from(archive);
           let prevString = localStorage.getItem("healthChosen");
@@ -223,7 +226,42 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
+          //swipe
+          const news = document.querySelectorAll('.news');
+          const newsArray = Array.from(news);
+          newsArray.forEach(_C =>{
+            N = _C.children.length;
 
+            _C.style.setProperty('--n', N)
+            
+            let x0 = null;
+
+            _C.addEventListener('mousedown', lock, false);
+            _C.addEventListener('touchstart', lock, false);
+
+            _C.addEventListener('mouseup', move, false);
+            _C.addEventListener('touchend', move, false);
+
+            function lock(e) { x0 = unify(e).clientX };
+            
+            let i = 0;
+
+            function move(e) {
+              if(x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0, s = Math.sign(dx);
+
+                if((i > 0 || s < 0) && (i < N - 1 || s > 0))
+                _C.style.setProperty('--i', i -= s);
+
+                x0 = null
+              }
+            };
+            _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
+
+            function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
+          });
+                  
+          //add to archives
           let archive = document.querySelectorAll(".archive-sport");
           let archiveArray = Array.from(archive);
           let prevString = localStorage.getItem("sportChosen");
@@ -273,7 +311,42 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
+          //swipe
+          const news = document.querySelectorAll('.news');
+          const newsArray = Array.from(news);
+          newsArray.forEach(_C =>{
+            N = _C.children.length;
 
+            _C.style.setProperty('--n', N)
+            
+            let x0 = null;
+
+            _C.addEventListener('mousedown', lock, false);
+            _C.addEventListener('touchstart', lock, false);
+
+            _C.addEventListener('mouseup', move, false);
+            _C.addEventListener('touchend', move, false);
+
+            function lock(e) { x0 = unify(e).clientX };
+            
+            let i = 0;
+
+            function move(e) {
+              if(x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0, s = Math.sign(dx);
+
+                if((i > 0 || s < 0) && (i < N - 1 || s > 0))
+                _C.style.setProperty('--i', i -= s);
+
+                x0 = null
+              }
+            };
+            _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
+
+            function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
+          });
+                  
+          //add to archives
           let archive = document.querySelectorAll(".archive-business");
           let archiveArray = Array.from(archive);
           let prevString = localStorage.getItem("businessChosen");
@@ -323,7 +396,42 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
+          //swipe
+          const news = document.querySelectorAll('.news');
+          const newsArray = Array.from(news);
+          newsArray.forEach(_C =>{
+            N = _C.children.length;
 
+            _C.style.setProperty('--n', N)
+            
+            let x0 = null;
+
+            _C.addEventListener('mousedown', lock, false);
+            _C.addEventListener('touchstart', lock, false);
+
+            _C.addEventListener('mouseup', move, false);
+            _C.addEventListener('touchend', move, false);
+
+            function lock(e) { x0 = unify(e).clientX };
+            
+            let i = 0;
+
+            function move(e) {
+              if(x0 || x0 === 0) {
+                let dx = unify(e).clientX - x0, s = Math.sign(dx);
+
+                if((i > 0 || s < 0) && (i < N - 1 || s > 0))
+                _C.style.setProperty('--i', i -= s);
+
+                x0 = null
+              }
+            };
+            _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
+
+            function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
+          });
+                  
+          //add to archives
           let archive = document.querySelectorAll(".archive-travel");
           let archiveArray = Array.from(archive);
           let prevString = localStorage.getItem("travelChosen");
