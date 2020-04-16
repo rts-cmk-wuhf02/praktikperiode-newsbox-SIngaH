@@ -24,19 +24,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
   console.log("business: " + businessChosen)
   console.log("travel: " + travelChosen)
   
-  if(Echeck === "false" || europeChosen === ""){
+  if(Echeck === "false" || europeChosen === "" || europeChosen === null){
     europe.style.display="none"
   }
-  if(Hcheck === "false" || healthChosen === ""){
+  if(Hcheck === "false" || healthChosen === "" || healthChosen === null){
     health.style.display="none"
   }
-  if(Scheck === "false" || sportChosen === ""){
+  if(Scheck === "false" || sportChosen === "" || sportChosen === null){
     sport.style.display="none"
   }
-  if(Bcheck === "false" || businessChosen === ""){
+  if(Bcheck === "false" || businessChosen === "" || businessChosen === null){
     business.style.display="none"
   }
-  if(Tcheck === "false" || travelChosen === ""){
+  if(Tcheck === "false" || travelChosen === "" || travelChosen === null){
     travel.style.display="none"
   }
   
@@ -57,8 +57,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
+        
+        let array = europeChosen.split(",")
+        let indexQuote = `${index}`
 
-        if(europeChosen.includes(index)){
+        if(array.includes(indexQuote)){
           document.querySelector(".europe .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
                 <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
@@ -119,6 +122,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               let aString = array.join(",")
               localStorage.setItem("europeChosen", aString)
+              window.location.reload();//reloader siden efter at noget er blevet fjernet}
             }
         } 
       });
@@ -140,8 +144,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
+        let array = healthChosen.split(",")
+        let indexQuote = `${index}`
 
-        if(healthChosen.includes(index)){
+        if(array.includes(indexQuote)){
         //display on page
           document.querySelector(".health .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -203,6 +209,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               let aString = array.join(",")
               localStorage.setItem("healthChosen", aString)
+              window.location.reload();//reloader siden efter at noget er blevet fjernet
             }
         } 
       });
@@ -225,7 +232,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
           description = item.description;
         }
 
-        if(sportChosen.includes(index)){  
+        let array = sportChosen.split(",")
+        let indexQuote = `${index}`
+
+        if(array.includes(indexQuote)){ 
         //display on page
           document.querySelector(".sport .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -287,6 +297,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               let aString = array.join(",")
               localStorage.setItem("sportChosen", aString)
+              window.location.reload();//reloader siden efter at noget er blevet fjernet
             }
         }
       });
@@ -309,7 +320,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
           description = item.description;
         }
 
-        if(businessChosen.includes(index)){
+        let array = businessChosen.split(",")
+        let indexQuote = `${index}`
+
+        if(array.includes(indexQuote)){
         //display on page
           document.querySelector(".business .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -371,6 +385,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               let aString = array.join(",")
               localStorage.setItem("businessChosen", aString)
+              window.location.reload();//reloader siden efter at noget er blevet fjernet
             }
         } 
       });
@@ -392,9 +407,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
+
         let array = travelChosen.split(",")
-        console.log(array)
-        if(travelChosen.includes(index)){
+        let indexQuote = `${index}`
+
+        if(array.includes(indexQuote)){
         //display on page
           document.querySelector(".travel .news-hide").innerHTML += `
             <div class="news grid gap-1 py-4">
@@ -456,6 +473,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               let aString = array.join(",")
               localStorage.setItem("travelChosen", aString)
+              window.location.reload();//reloader siden efter at noget er blevet fjernet
             }
         } 
       });
