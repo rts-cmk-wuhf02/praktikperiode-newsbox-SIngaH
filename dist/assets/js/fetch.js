@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             _C[x].addEventListener('touchend', move(x), false);
             _C[x].addEventListener('touchmove', e => {e.preventDefault()}, false)
           }
-          
-          
+
+           
           function lock(e) { x0 = unify(e).clientX };
           
           let i = 0;
