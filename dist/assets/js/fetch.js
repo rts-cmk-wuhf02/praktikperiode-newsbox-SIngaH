@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         //display on page
         document.querySelector(".europe .news-hide").innerHTML += `
-          <div class="news grid gap-1 py-4" ontouchstart="swipeStart(event)" ontouchmove="swipeMove(event)" ontouchend="swipeEnd(event)">
+          <div class="news grid gap-1 py-4" data-swipe-threshold="20">
               <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
               <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
               <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
@@ -56,7 +56,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
-
+          document.querySelector(".news").addEventListener("touchstart", f)
+          function f(evt){
+            console.log(evt.touches)
+          }
+          /*
+          ontouchstart="swipeStart(event)" ontouchmove="swipeMove(event)" ontouchend="swipeEnd(event)"
           function swipeStart(event){
             console.log(event)
           }
@@ -65,7 +70,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
           }
           function swipeEnd(event){
             console.log(event)
-          }
+          }*/
           let archive = document.querySelectorAll(".archive-europe");
           let archiveArray = Array.from(archive);
           let prevString = localStorage.getItem("europeChosen");
