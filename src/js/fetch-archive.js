@@ -5,24 +5,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
   let Scheck = localStorage.getItem("sportCheck");
   let Bcheck = localStorage.getItem("businessCheck");
   let Tcheck = localStorage.getItem("travelCheck");
-  
-  let europe = document.querySelector(".europe");
-  let health = document.querySelector(".health");
-  let sport = document.querySelector(".sport");
-  let business = document.querySelector(".business");
-  let travel = document.querySelector(".travel");
 
   let europeChosen = localStorage.getItem("europeChosen");
   let healthChosen = localStorage.getItem("healthChosen");
   let sportChosen = localStorage.getItem("sportChosen"); 
   let businessChosen = localStorage.getItem("businessChosen");
   let travelChosen = localStorage.getItem("travelChosen");
-  
-  console.log("europe: " + europeChosen)
-  console.log("health: " + healthChosen)
-  console.log("sport: " + sportChosen)
-  console.log("business: " + businessChosen)
-  console.log("travel: " + travelChosen)
+    
+  let europe = document.querySelector(".europe");
+  let health = document.querySelector(".health");
+  let sport = document.querySelector(".sport");
+  let business = document.querySelector(".business");
+  let travel = document.querySelector(".travel");
   
   if(Echeck === "false" || europeChosen === "" || europeChosen === null){
     europe.style.display="none"
@@ -72,6 +66,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
+
             //swipe
             const news = document.querySelectorAll('.news');
             const newsArray = Array.from(news);
@@ -247,6 +242,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
+
             //swipe
             const news = document.querySelectorAll('.news');
             const newsArray = Array.from(news);
@@ -335,6 +331,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
+
             //swipe
             const news = document.querySelectorAll('.news');
             const newsArray = Array.from(news);
@@ -423,6 +420,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 </div>
             </div>
             `
+            
             //swipe
             const news = document.querySelectorAll('.news');
             const newsArray = Array.from(news);
