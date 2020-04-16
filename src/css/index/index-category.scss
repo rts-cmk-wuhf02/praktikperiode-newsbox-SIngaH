@@ -50,7 +50,6 @@
 }
 .news{
     grid-template-columns: 30% 67% 30%;
-    grid-template-rows: 80% 20%;
     border-bottom:solid 1px var(--grey-color);
     column-gap: 7px;
     transform: translate(calc(var(--i, 0)/var(--n)*-115%));
