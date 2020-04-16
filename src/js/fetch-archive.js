@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     })  
 
   //business fetch
-  fetch("https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml")
+  fetch("https://rss.nytimes.com/services/xml/rss/nyt/Business.xml")
     .then(response => response.text())
     .then(data => {
       const parser = new DOMParser();
@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     })  
 
   //travel fetch
-  fetch("https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml")
+  fetch("https://rss.nytimes.com/services/xml/rss/nyt/Travel.xml")
     .then(response => response.text())
     .then(data => {
       const parser = new DOMParser();
@@ -392,7 +392,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }else{
           description = item.description;
         }
-
+        let array = travelChosen.split(",")
+        console.log(array)
         if(travelChosen.includes(index)){
         //display on page
           document.querySelector(".travel .news-hide").innerHTML += `
