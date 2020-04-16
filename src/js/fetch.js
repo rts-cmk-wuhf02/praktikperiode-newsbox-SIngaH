@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         //display on page
         document.querySelector(".europe .news-hide").innerHTML += `
-          <div class="news grid gap-1 py-4" data-swipe-threshold="20">
+          <div class="news grid gap-1 py-4">
               <img src="assets/images/other-img.png" alt="man surfing" class="surfing-circle">
               <h3 class="card-title"><a href="${item.link}">${item.title}</a></h3>
               <p class="body-copy-small"><a href="${item.link}">${description}</a></p>
@@ -56,21 +56,38 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </div>
           </div>
           `
-          document.querySelector(".news").addEventListener("touchstart", f)
-          function f(evt){
-            console.log(evt.touches)
-          }
-          /*
-          ontouchstart="swipeStart(event)" ontouchmove="swipeMove(event)" ontouchend="swipeEnd(event)"
-          function swipeStart(event){
-            console.log(event)
-          }
-          function swipeMove(event){
-            console.log(event)
-          }
-          function swipeEnd(event){
-            console.log(event)
-          }*/
+          //swipe
+          const _C = document.querySelector('.news');
+          N = _C.children.length;
+
+          _C.style.setProperty('--n', N)
+          
+          let x0 = null;
+
+          _C.addEventListener('mousedown', lock, false);
+          _C.addEventListener('touchstart', lock, false);
+
+          _C.addEventListener('mouseup', move, false);
+          _C.addEventListener('touchend', move, false);
+
+          function lock(e) { x0 = unify(e).clientX };
+          
+          let i = 0;
+
+          function move(e) {
+            if(x0 || x0 === 0) {
+              let dx = unify(e).clientX - x0, s = Math.sign(dx);
+              
+              if((i > 0 || s < 0) && (i < N - 1 || s > 0))
+              _C.style.setProperty('--i', i -= s);
+              
+              x0 = null
+            }
+          };
+          _C.addEventListener('touchmove', e => {e.preventDefault()}, false)
+
+          function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
+      
           let archive = document.querySelectorAll(".archive-europe");
           let archiveArray = Array.from(archive);
           let prevString = localStorage.getItem("europeChosen");
