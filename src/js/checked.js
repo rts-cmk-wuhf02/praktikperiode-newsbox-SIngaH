@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         localStorage.setItem("europeCheck", europe.checked);
     }
     // if(healthCheck === null)
-    console.log(europeCheck)
+    console.log(europeCheck + " check")
     
 //europe
    europe.addEventListener("click", Echecked);
