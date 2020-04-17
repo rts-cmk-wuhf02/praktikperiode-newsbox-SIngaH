@@ -8,14 +8,25 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     let europeCheck = localStorage.getItem("europeCheck");
     let healthCheck = localStorage.getItem("healthCheck");
- 
+    let sportCheck = localStorage.getItem("sportCheck");
+    let businessCheck = localStorage.getItem("businessCheck");
+    let travelCheck = localStorage.getItem("travelCheck");
+
     if(europeCheck === null){
         localStorage.setItem("europeCheck", europe.checked);
     }
     if(healthCheck === null){
         localStorage.setItem("healthCheck", health.checked);
     }
-    
+    if(sportCheck === null){
+        localStorage.setItem("sportCheck", sport.checked);
+    }
+    if(businessCheck === null){
+        localStorage.setItem("businessCheck", business.checked);
+    }
+    if(travelCheck === null){
+        localStorage.setItem("travelCheck", travel.checked);
+    }
 //europe
    europe.addEventListener("click", Echecked);
 
