@@ -71,7 +71,7 @@ Se XD fil i mappen projekt-UI.
 
 6. **Deploy on Netlify**
 
-   Din webapplikation skal udgives på Netlify.
+   https://praktikperiode-newsbox-singah.netlify.app/
 
 
 ## Nice to have opgaver
