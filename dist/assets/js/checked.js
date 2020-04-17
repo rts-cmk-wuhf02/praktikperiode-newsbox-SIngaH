@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let europeCheck = localStorage.getItem("europeCheck");
  
     if(europeCheck === null){
-        localStorage.setItem("europeCheck", true);
+        localStorage.setItem("europeCheck", europe.checked);
     }
+    // if(healthCheck === null)
     console.log(europeCheck)
     
 //europe
