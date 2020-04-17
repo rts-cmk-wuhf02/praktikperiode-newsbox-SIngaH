@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let sport = document.querySelector(".sport-check");
     let business = document.querySelector(".business-check");
     let travel = document.querySelector(".travel-check");
+    let europeCheck = localStorage.getItem("europeCheck");
  
+    if(europeCheck === null){
+        localStorage.setItem("europeCheck", true);
+    }
+    
 //europe
    europe.addEventListener("click", Echecked);
 
