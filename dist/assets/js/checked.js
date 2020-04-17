@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     if(europeCheck === null){
         localStorage.setItem("europeCheck", true);
     }
+    console.log(europeCheck)
     
 //europe
    europe.addEventListener("click", Echecked);
