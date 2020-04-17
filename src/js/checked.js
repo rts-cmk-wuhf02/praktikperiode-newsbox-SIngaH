@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let travel = document.querySelector(".travel-check");
 
     let europeCheck = localStorage.getItem("europeCheck");
+    let healthCheck = localStorage.getItem("healthCheck");
  
     if(europeCheck === null){
         localStorage.setItem("europeCheck", europe.checked);
