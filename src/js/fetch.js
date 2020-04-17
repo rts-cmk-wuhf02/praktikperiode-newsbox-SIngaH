@@ -108,7 +108,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               prevString = prevArray.join(",");
               localStorage.setItem("europeChosen", prevString);
-              console.log("europe " + localStorage.getItem("europeChosen"))
             }
           }
       });
@@ -193,7 +192,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               prevString = prevArray.join(",");
               localStorage.setItem("healthChosen", prevString);
-              console.log("health " + localStorage.getItem("healthChosen"))
             }
           }
       });
@@ -277,8 +275,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 prevArray.push(index);
               }
               prevString = prevArray.join(",");
-              localStorage.setItem("sportChosen", prevString);
-              console.log("sport " + localStorage.getItem("sportChosen"))
             }
           }
       });
@@ -363,7 +359,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               prevString = prevArray.join(",");
               localStorage.setItem("businessChosen", prevString);
-              console.log("business " + localStorage.getItem("businessChosen"))
             }
           }
       });
@@ -448,7 +443,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
               }
               prevString = prevArray.join(",");
               localStorage.setItem("travelChosen", prevString);
-              console.log("travel " + localStorage.getItem("travelChosen"))
             }
           }
       });
