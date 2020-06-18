@@ -5,6 +5,9 @@
     font-family: europa, sans-serif;
     color:var(--text-color)
 }
+html {
+    overflow-y: scroll;
+}
 #wrapper{
     max-width:326px;
     margin:0 auto;
